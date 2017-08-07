@@ -1,11 +1,10 @@
 # VIM
 It's just a VIM config
-Ubuntu 17.04
 
-.vimrc
-.tmux.conf
+- .vimrc
+- .tmux.conf
 
-Vim compiled just with python3!  YCM also. 
+Vim compiled just with python3!  (YCM also) 
 _____________________________
 
 ### Plugins:                                                                                                    
@@ -16,7 +15,7 @@ _____________________________
     - jedi-vim                                                                                                 
     - Auto Pairs
     
-    -YouCompleteMe    
+    -YouCompleteMe      
     
     
 
