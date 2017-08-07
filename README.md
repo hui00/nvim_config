@@ -1,5 +1,5 @@
 # VIM
-It's is just VIM config
+It's just a VIM config
 
 .bashrc
 .vimrc
