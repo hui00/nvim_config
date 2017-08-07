@@ -3,8 +3,10 @@ It's just a VIM config
 
 
 .vimrc
-.tmuxc.onf
+.tmux.conf
 
+Ubuntu 17.04  
+Vim compiled with python3!  YCM too. 
 _____________________________
 
 ### Plugins:                                                                                                    
@@ -15,6 +17,9 @@ _____________________________
     - jedi-vim                                                                                                 
                                                                                                     
     - Auto PairsYouCompleteMe    
+    
+    
+
   
  
   
