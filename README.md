@@ -1,7 +1,7 @@
 # VIM
 It's just a VIM config
 
-.bashrc
+
 .vimrc
 .tmuxc.onf
 
