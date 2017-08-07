@@ -1,12 +1,11 @@
 # VIM
 It's just a VIM config
-
+Ubuntu 17.04
 
 .vimrc
 .tmux.conf
 
-Ubuntu 17.04  
-Vim compiled with python3!  YCM too. 
+Vim compiled just with python3!  YCM also. 
 _____________________________
 
 ### Plugins:                                                                                                    
