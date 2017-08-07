@@ -14,8 +14,9 @@ _____________________________
     - NERD Commenter                                                                                           
     - NERDTree                                                                                                 
     - jedi-vim                                                                                                 
-                                                                                                    
-    - Auto PairsYouCompleteMe    
+    - Auto Pairs
+    
+    -YouCompleteMe    
     
     
 
