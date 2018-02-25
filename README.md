@@ -14,11 +14,10 @@ _____________________________
     - NERDTree                                                                                                 
     - jedi-vim                                                                                                 
     - Auto Pairs
+    - Vim-Tmux-Navigator
+    - fzf
+    - Vim-Solidity
+    - vim-obsession'
+    - ultisnips
     
     -YouCompleteMe      
-    
-    
-
-  
- 
-  
