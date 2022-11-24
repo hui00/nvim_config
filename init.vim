@@ -1,120 +1,11 @@
 syntax on
 filetype plugin indent on
-filetype on
-filetype indent on
-
-set nowrap
-set linebreak
-
-set number
-set ignorecase
-set smartcase
-noremap <C-`> :set wrap!<CR>
-noremap <C-r> :!ruby % <CR>
-
-
-set statusline=%{expand('%:p:h:t')}/%t
-
-setlocal foldmethod=syntax         
-setlocal foldlevelstart=99
-
-nnoremap <SPACE> <Nop>
-let g:sneak#label = 1
-let mapleader=" "
-
-" vertical movement in wrapped lines
-:nmap j gj
-:nmap k gk
-
-" end of line
-nnoremap H ^
-nnoremap L $
-:vnoremap H ^
-:vnoremap L $
-
-
-let g:splitjoin_split_mapping = ''
-let g:splitjoin_join_mapping = ''
-
-nmap <Leader>k :SplitjoinJoin<cr>
-nmap <Leader>j :SplitjoinSplit<cr>
-
-nnoremap <Leader>h :SidewaysLeft<cr>
-nnoremap <Leader>l :SidewaysRight<cr>
-
-
-
-"tab window
-"
-" :nnoremap <TAB> <C-W><C-W>
-
-"redo
-nnoremap U <C-R> # redo
-
-"für Git Add On
-noremap <Up> :GitGutterPrevHunk<CR>
-noremap <Down> :GitGutterNextHunk<CR>
-
-"Move Window
-noremap <Right> :cnext<CR>
-noremap <Left> :cprev<CR>
-noremap <C-j> <C-W>j
-noremap <C-k> <C-W>k
-noremap <C-h> <C-W>h
-noremap <C-l> <C-W>l
-
-
-nnoremap <C-o> :Files<CR>
-nnoremap <C-p> :Rg<CR>
-nnoremap <silent> <Leader>b :Buffers<CR>
-
-let g:fzf_action = {
-  \ 'ctrl-s': 'split',
-  \ 'ctrl-v': 'vsplit' }
-
-set expandtab
-set shiftwidth=2
-set softtabstop=2
-set autoindent
-set hidden
-set hlsearch
-set history=1000
-set scrolloff=7
-set wildmenu 
-
-
-set undofile                " Save undos after file closes
-set undodir=$HOME/.vim/undo " where to save undo histories
-set undolevels=1000         " How many undos
-set undoreload=10000        " number of lines to save for undo
-
-
-
-
-"clipboard copy and past
-set clipboard^=unnamed,unnamedplus
-
-let g:ycm_filetype_whitelist = { '*': 1 }
-
-let g:ycm_filetype_blacklist={'text':0}
-
-if has('gui_running')
-    set guifont=Source\ Code\ Pro\ 14
-  endif
-
-
-set rtp+=/usr/local/opt/fzf
-
-
-
-
 
 call plug#begin()
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
 Plug 'airblade/vim-rooter'
-
 Plug 'tpope/vim-bundler'
 
 
@@ -132,6 +23,8 @@ Plug 'tpope/vim-commentary'
 " Rails
 Plug 'vim-ruby/vim-ruby'
 Plug 'tpope/vim-rails'
+Plug 'tpope/vim-endwise'
+Plug 'tpope/vim-dispatch'
 
 " Split
 Plug 'andrewradev/splitjoin.vim'
@@ -146,29 +39,157 @@ Plug 'mattn/emmet-vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 
-
 " Colorscheme
 Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
-
-
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
+Plug 'simnalamburt/vim-mundo'
+
 call plug#end()
 
+
+
+set number 
+set ignorecase
+set smartcase
+
+set expandtab
+set shiftwidth=2
+set softtabstop=2
+set autoindent
+set hidden
+set hlsearch
+set history=1000
+set scrolloff=7
+set sidescroll=1
+set wildmenu 
+
+set undofile                " Save undos after file closes
+set undodir=$HOME/.vim/undo " where to save undo histories
+set undolevels=1000         " How many undos
+set undoreload=10000        " number of lines to save for undo
+
+"clipboard copy and past
+set clipboard^=unnamed,unnamedplus
+
+" fold and break lines
+setlocal foldmethod=syntax         
+setlocal foldlevelstart=99
+set nowrap
+set linebreak
+noremap <C-`> :set wrap!<CR>
+
+
+nnoremap <SPACE> <Nop>
+map <Tab> %
+
+let g:sneak#label = 1
+let mapleader=" "
+
+" vertical movement in wrapped lines
+:nmap j gj
+:nmap k gk
+
+" Goto line/column instead
+noremap ' `
+
+" Mark position before search
+nnoremap / ms/
+
+"redo
+nnoremap U <C-R> 
+
+" end of line
+nnoremap H ^
+nnoremap L $
+vnoremap L g_
+vnoremap H ^
+
+" Keep the cursor in place while joining lines
+nnoremap J mzJ`z
+
+" Move to last change
+nnoremap ; `.zz
+
+" split 
+let g:splitjoin_split_mapping = ''
+let g:splitjoin_join_mapping = ''
+nmap <Leader>k :SplitjoinJoin<cr>
+nmap <Leader>j :SplitjoinSplit<cr>
+nnoremap <Leader>h :SidewaysLeft<cr>
+nnoremap <Leader>l :SidewaysRight<cr>
+
+" mundo
+nnoremap <Leader>u :MundoToggle<CR>
+
+" buffer
+nmap <Leader>p :bp<cr>
+nmap <Leader>n :bn<cr>
+nmap <Leader>d :bd<cr>
+
+" Split windows
+nnoremap <leader>s <C-W>s
+nnoremap <leader>v <C-W>v
+
+"für Git Add On
+noremap <Up> :GitGutterPrevHunk<CR>
+noremap <Down> :GitGutterNextHunk<CR>
+
+"Move Window
+noremap <Right> :cnext<CR>
+noremap <Left> :cprev<CR>
+noremap <C-j> <C-W>j
+noremap <C-k> <C-W>k
+noremap <C-h> <C-W>h
+noremap <C-l> <C-W>l
+
+
+"Go Files
+nnoremap <C-o> :Files<CR>
+nnoremap <C-p> :Rg<CR>
+nnoremap <silent> <Leader>b :Buffers<CR>
+
+
+
+let g:fzf_action = {
+  \ 'ctrl-s': 'split',
+  \ 'ctrl-v': 'vsplit' }
+
+
+
+let g:ycm_filetype_whitelist = { '*': 1 }
+
+let g:ycm_filetype_blacklist={'text':0}
+
+if has('gui_running')
+    set guifont=Source\ Code\ Pro\ 14
+  endif
+
+
+set rtp+=/usr/local/opt/fzf
+
+
+
+
+
+
+" Colorscheme
+colorscheme catppuccin
+set statusline=%{expand('%:p:h:t')}/%t
+let g:airline#parts#ffenc#skip_expected_string='utf-8[unix]'
+
+
+
+" NerdTree Bindings
 nnoremap <C-n> :NERDTreeToggle<CR>
 map <leader>f :NERDTreeFind<CR>
 
 
-colorscheme catppuccin
-
 autocmd FileType scss setl iskeyword+=@-@
 
-nnoremap <leader>sv :source $MYVIMRC<CR>
 
 command! -nargs=0 Prettier :call CocAction('runCommand', 'prettier.formatFile')
-
-
 
 
 set encoding=utf-8
@@ -185,7 +206,8 @@ set updatetime=300
 set signcolumn=yes
 
 
-
+" Symbol renaming.
+nmap <leader>rn <Plug>(coc-rename)
 
 " GoTo code navigation.
 nmap <silent> gd <Plug>(coc-definition)
@@ -204,7 +226,9 @@ function! ShowDocumentation()
   endif
 endfunction
 
+inoremap <silent><expr> <c-,> coc#refresh()
 
-" Symbol renaming.
-nmap <leader>rn <Plug>(coc-rename)
 
+nnoremap <leader>/ :!htmlbeautifier %<CR>
+noremap <C-r> :!ruby % <CR>
+nnoremap <leader>sv :source $MYVIMRC<CR>
