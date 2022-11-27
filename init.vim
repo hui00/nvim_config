@@ -76,85 +76,6 @@ set undodir=$HOME/.vim/undo " where to save undo histories
 set undolevels=1000         " How many undos
 set undoreload=10000        " number of lines to save for undo
 
-
-syntax on
-filetype plugin indent on
-
-call plug#begin()
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
-
-Plug 'airblade/vim-rooter'
-Plug 'tpope/vim-bundler'
-
-
-Plug 'github/copilot.vim'
-Plug 'tpope/vim-surround'
-Plug 'airblade/vim-gitgutter'
-Plug 'wellle/targets.vim'
-Plug 'justinmk/vim-sneak'
-Plug 'preservim/nerdtree'
-
-" gcc
-Plug 'tpope/vim-commentary'
-
-
-" Rails
-Plug 'vim-ruby/vim-ruby'
-Plug 'tpope/vim-rails'
-Plug 'tpope/vim-endwise'
-Plug 'tpope/vim-dispatch'
-
-" Split
-Plug 'andrewradev/splitjoin.vim'
-Plug 'AndrewRadev/tagalong.vim'
-Plug 'AndrewRadev/sideways.vim'
-Plug 'AndrewRadev/switch.vim'
-
-" Emmet for HTML
-Plug 'mattn/emmet-vim'
-Plug 'alvan/vim-closetag'
-" ' LSP
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-
-
-" Colorscheme
-Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-
-Plug 'simnalamburt/vim-mundo'
-
-
-Plug 'markstory/vim-zoomwin'
-
-
-
-call plug#end()
-
-
-
-set noswapfile
-set number 
-set ignorecase
-set smartcase
-
-set expandtab
-set shiftwidth=2
-set softtabstop=2
-set autoindent
-set hidden
-set hlsearch
-set history=1000
-set scrolloff=7
-set sidescroll=1
-set wildmenu 
-
-set undofile                " Save undos after file closes
-set undodir=$HOME/.vim/undo " where to save undo histories
-set undolevels=1000         " How many undos
-set undoreload=10000        " number of lines to save for undo
-
 "clipboard copy and past
 set clipboard^=unnamed,unnamedplus
 
@@ -505,4 +426,5 @@ function! s:check_back_space() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
+
 
