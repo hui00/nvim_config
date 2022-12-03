@@ -10,8 +10,15 @@ end
 map('n', '<tab>', '%')
 
 -- SplitjoinJoin
-map('n', '<leader>j', '<cmd>::SplitjoinJoin<cr>')
-map('n', '<leader>k', '<cmd>::SplitjoinSplit<cr>')
+map('n', '<leader>k', '<cmd>::SplitjoinJoin<cr>')
+map('n', '<leader>j', '<cmd>::SplitjoinSplit<cr>')
+
+-- SideWays
+map('n', '<leader>h', '<cmd>::SidewaysLeft<cr>')
+map('n', '<leader>l', '<cmd>::SidewaysRight<cr>')
+
+-- Switch
+map('n', '<c-s>', '<cmd>::Switch<cr>')
 
 -- End of Line
 map('n', 'H', '^')
@@ -23,6 +30,12 @@ map('v', 'H', '^')
 -- "redo
 map('n', 'U', '<c-r>')
 
+-- warp
+map('n', '<c-`>', '<cmd>:set wrap!<cr>')
+
+--" Mark position before search
+map('n', '/', 'ms/')
+
 
 -- Keep the cursor in place while joining lines
 -- nnoremap J mzJ`z
@@ -32,9 +45,9 @@ map('n','J','mzJ`z')
 -- nmap <Leader>p :bp<cr>
 -- nmap <Leader>n :bn<cr>
 -- nmap <Leader>d :bd<cr>
-map('n','<leader>p','<cmd>:bp<CR>', { silent = true }) 
-map('n','<leader>n','<cmd>:bn<CR>', { silent = true })
-map('n','<leader>d','<cmd>:bd<CR>', { silent = true })
+map('n','<leader>bp','<cmd>:bp<CR>', { silent = true }) 
+map('n','<leader>bn','<cmd>:bn<CR>', { silent = true })
+map('n','<leader>bd','<cmd>:bd<CR>', { silent = true })
 
 
 -- " Split windows

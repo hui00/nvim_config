@@ -45,17 +45,18 @@ use {
   requires = { 'kyazdani42/nvim-web-devicons', opt = true }
 }
 
--- use {'AndrewRadev/splitjoin.vim'}
+-- <leader>j /k
+use {'AndrewRadev/splitjoin.vim'}
 
 -- -- zoom with <c-z>
--- use {'dhruvasagar/vim-zoom'}
+use {'dhruvasagar/vim-zoom'}
 
 -- -- change tag pair auto
--- use {'AndrewRadev/tagalong.vim'}
+use {'AndrewRadev/tagalong.vim'}
 
--- -- change order
--- use {'AndrewRadev/sideways.vim'}
+-- -- change order  <leader>h/l
+use {'AndrewRadev/sideways.vim'}
 
 -- -- change true false or style form if etc.
--- user{'AndrewRadev/switch.vim'}
+use {'AndrewRadev/switch.vim'}
 end)

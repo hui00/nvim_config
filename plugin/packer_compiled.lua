@@ -136,10 +136,25 @@ _G.packer_plugins = {
     path = "/Users/ba/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
   },
+  ["sideways.vim"] = {
+    loaded = true,
+    path = "/Users/ba/.local/share/nvim/site/pack/packer/start/sideways.vim",
+    url = "https://github.com/AndrewRadev/sideways.vim"
+  },
   ["splitjoin.vim"] = {
     loaded = true,
     path = "/Users/ba/.local/share/nvim/site/pack/packer/start/splitjoin.vim",
     url = "https://github.com/AndrewRadev/splitjoin.vim"
+  },
+  ["switch.vim"] = {
+    loaded = true,
+    path = "/Users/ba/.local/share/nvim/site/pack/packer/start/switch.vim",
+    url = "https://github.com/AndrewRadev/switch.vim"
+  },
+  ["tagalong.vim"] = {
+    loaded = true,
+    path = "/Users/ba/.local/share/nvim/site/pack/packer/start/tagalong.vim",
+    url = "https://github.com/AndrewRadev/tagalong.vim"
   },
   ["telescope.nvim"] = {
     loaded = true,
@@ -155,6 +170,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/ba/.local/share/nvim/site/pack/packer/start/vim-gitgutter",
     url = "https://github.com/airblade/vim-gitgutter"
+  },
+  ["vim-zoom"] = {
+    loaded = true,
+    path = "/Users/ba/.local/share/nvim/site/pack/packer/start/vim-zoom",
+    url = "https://github.com/dhruvasagar/vim-zoom"
   }
 }
 
