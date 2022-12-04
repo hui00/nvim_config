@@ -40,15 +40,15 @@ require('lualine').setup {
   },
   sections = {
     lualine_a = {
-      { 'mode', separator = { left = '' }, right_padding = 2 },
-    },
-    lualine_b = {'branch', { 'filename', path = 1, }},
-    lualine_c = {'fileformat' },
-    lualine_x = {'diff', 'diagnostics'},
-    lualine_y = { 'filetype', 'progress' },
-    lualine_z = {
-      { 'location', separator = { right = '' }, left_padding = 2 },
-    },
+       { 'mode', separator = { left = '' }, right_padding = 2 },
+     },
+     lualine_b = {'branch', { 'filename', path = 1, }},
+     lualine_c = {'fileformat'},
+     lualine_x = { "vim.fn['zoom#statusline']()", 'diff', 'diagnostics' },
+     lualine_y = { 'filetype', 'progress' },
+     lualine_z = {
+       { 'location', separator = { right = '' }, left_padding = 2 },
+     },
   },
   inactive_sections = {
     lualine_a = { 'filename' },

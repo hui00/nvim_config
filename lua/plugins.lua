@@ -59,4 +59,10 @@ use {'AndrewRadev/sideways.vim'}
 
 -- -- change true false or style form if etc.
 use {'AndrewRadev/switch.vim'}
+
+-- tree-sitter
+use {
+  'nvim-treesitter/nvim-treesitter',
+  run = ':TSUpdate'
+}
 end)
