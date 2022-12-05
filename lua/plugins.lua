@@ -52,7 +52,7 @@ use {'AndrewRadev/splitjoin.vim'}
 use {'dhruvasagar/vim-zoom'}
 
 -- -- change tag pair auto
-use {'AndrewRadev/tagalong.vim'}
+-- use {'AndrewRadev/tagalong.vim'}
 
 -- -- change order  <leader>h/l
 use {'AndrewRadev/sideways.vim'}
@@ -65,4 +65,5 @@ use {
   'nvim-treesitter/nvim-treesitter',
   run = ':TSUpdate'
 }
+use { "tpope/vim-rails"}
 end)

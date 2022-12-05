@@ -1,4 +1,5 @@
 require'nvim-treesitter.configs'.setup {
+  autopairs = { enable = true },
   ensure_installed = 'maintained',
   -- Install parsers synchronously (only applied to `ensure_installed`)
   ensure_installed = "all",
