@@ -6,6 +6,10 @@ local function map(m, k, v)
     vim.keymap.set(m, k, v, { silent = true })
 end
 
+
+-- inoremap <silent><expr> <c-,> coc#refresh()
+map('i', '<c-,>', 'coc#refresh()')
+
 -- 
 map('n', '<tab>', '%')
 

@@ -37,4 +37,6 @@
   "coc.preferences.echodocSupport": true,
   "html.format.templating": true,
   "html.format.enable": false,
+  "codeLens.enable": true,
+  "solargraph.useBundler": true,
 }
