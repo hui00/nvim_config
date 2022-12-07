@@ -4,6 +4,7 @@ require('keybinds')
 -- require('coc')
 require('bubbles')
 require('treesitter')
+
 require('lsp')
 
 -- :LuaCacheLog

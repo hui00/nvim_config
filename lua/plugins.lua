@@ -7,23 +7,8 @@ return require('packer').startup(function(use)
   -- improve :LuaCacheLoga lodading
   use 'lewis6991/impatient.nvim'
   use {"tpope/vim-commentary"}
-  use {
-  "zbirenbaum/copilot.lua",
-  event = "VimEnter",
-  config = function()
-    vim.defer_fn(function()
-      require("copilot").setup()
-    end, 100)
-  end,
-  }
+  use {"github/copilot.vim"}
   use "hrsh7th/nvim-cmp"
-  use {
-  "zbirenbaum/copilot-cmp",
-  after = { "copilot.lua" },
-  config = function ()
-    require("copilot_cmp").setup()
-  end
-}
   use {'tzachar/cmp-tabnine', run='./install.sh', requires = 'hrsh7th/nvim-cmp'}
   use({
     "kylechui/nvim-surround",
