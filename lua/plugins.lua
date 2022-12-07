@@ -1,8 +1,30 @@
 return require('packer').startup(function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
+  use 'neovim/nvim-lspconfig' -- Configurations for Nvim LSP
   use { "catppuccin/nvim", as = "catppuccin" }
+
+  -- improve :LuaCacheLoga lodading
+  use 'lewis6991/impatient.nvim'
   use {"tpope/vim-commentary"}
+  use {
+  "zbirenbaum/copilot.lua",
+  event = "VimEnter",
+  config = function()
+    vim.defer_fn(function()
+      require("copilot").setup()
+    end, 100)
+  end,
+  }
+  use "hrsh7th/nvim-cmp"
+  use {
+  "zbirenbaum/copilot-cmp",
+  after = { "copilot.lua" },
+  config = function ()
+    require("copilot_cmp").setup()
+  end
+}
+  use {'tzachar/cmp-tabnine', run='./install.sh', requires = 'hrsh7th/nvim-cmp'}
   use({
     "kylechui/nvim-surround",
     tag = "*", -- Use for stability; omit to use `main` branch for the latest features
@@ -27,7 +49,7 @@ use {
 -- or                            , branch = '0.1.x',
   requires = { {'nvim-lua/plenary.nvim'} }
 }
-use {'neoclide/coc.nvim', branch = 'release'}
+-- use {'neoclide/coc.nvim', branch = 'release'}
 use {'rgroli/other.nvim'}
 use {
   "nvim-neo-tree/neo-tree.nvim",
@@ -53,6 +75,10 @@ use {'dhruvasagar/vim-zoom'}
 
 -- -- change tag pair auto
 -- use {'AndrewRadev/tagalong.vim'}
+use {
+	"windwp/nvim-autopairs",
+    config = function() require("nvim-autopairs").setup {} end
+}
 
 -- -- change order  <leader>h/l
 use {'AndrewRadev/sideways.vim'}
@@ -66,4 +92,25 @@ use {
   run = ':TSUpdate'
 }
 use { "tpope/vim-rails"}
+
+-- cmp
+use "hrsh7th/cmp-nvim-lsp"
+use "hrsh7th/cmp-buffer"
+use "hrsh7th/cmp-path"
+
+-- " For vsnip users.
+use 'hrsh7th/cmp-vsnip'
+use 'hrsh7th/vim-vsnip'
+
+-- For luasnip users.
+use 'L3MON4D3/LuaSnip'
+use 'saadparwaiz1/cmp_luasnip'
+
+--- For ultisnips users.
+use 'SirVer/ultisnips'
+use 'quangnguyen30192/cmp-nvim-ultisnips'
+
+-- For snippy users.
+use 'dcampos/nvim-snippy'
+use 'dcampos/cmp-snippy'
 end)
