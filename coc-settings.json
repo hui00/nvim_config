@@ -15,7 +15,7 @@
     "typescript",
     "typescriptreact"
   ],
-  "emmet.includeLanguages ": {
+  "emmet.includeLanguages": {
     "javascript": "javascriptreact",
     "typescript": "typescriptreact",
     "vue-html": "html",
@@ -34,9 +34,9 @@
     "html.erb"
   ],
   "suggest.noselect": true,
-  "coc.preferences.echodocSupport": true,
   "html.format.templating": true,
   "html.format.enable": false,
   "codeLens.enable": true,
   "solargraph.useBundler": true,
+  "solargraph.diagnostics": true,
 }

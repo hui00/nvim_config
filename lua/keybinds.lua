@@ -2,16 +2,15 @@ local function map(m, k, v)
     vim.keymap.set(m, k, v, { silent = true })
 end
 
-local function map(m, k, v)
-    vim.keymap.set(m, k, v, { silent = true })
-end
-
-
 -- inoremap <silent><expr> <c-,> coc#refresh()
 map('i', '<c-,>', 'coc#refresh()')
 
 -- 
-map('n', '<tab>', '%')
+map('n', '<tab>', '<Plug>(matchup-%)')
+map('v', '<tab>', '<Plug>(matchup-%)')
+map('n', '[<tab>', '<Plug>(matchup-[%)')
+map('n', ']<tab>', '<Plug>(matchup-]%)')
+map('n', 'z<tab>', '<Plug>(matchup-z%)')
 
 -- SplitjoinJoin
 map('n', '<leader>k', '<cmd>:SplitjoinJoin<cr>')
@@ -124,4 +123,4 @@ map("n", "<leader>fc", "<cmd>:OtherClear<CR>", { noremap = true, silent = true }
 
 
 map('n','<leader>/','<cmd>:!htmlbeautifier %<CR>', { silent = true })
-map('n','<c-r>','<cmd>:!ruby %<CR>', { silent = true })
+-- map('n','<c-r>','<cmd>:!ruby %<CR>', { silent = true })

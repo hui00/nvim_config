@@ -1,11 +1,13 @@
 require('settings')
+
 require('plugins')
 require('keybinds')
--- require('coc')
+require('coc')
 require('bubbles')
 require('treesitter')
+require('toggle')
 
-require('lsp')
+-- require('lsp')
 
 -- :LuaCacheLog
 require('impatient')
@@ -18,6 +20,3 @@ require("bufferline").setup{
 		-- diagnostics = "c",
 	}
 }
-
-
-
