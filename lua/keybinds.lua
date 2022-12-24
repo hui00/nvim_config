@@ -3,9 +3,17 @@ local function map(m, k, v)
 end
 
 -- inoremap <silent><expr> <c-,> coc#refresh()
-map('i', '<c-,>', 'coc#refresh()')
+-- map('i', '<c-,>', 'coc#refresh()')
+--
+-- map('n', '<Leader>/', '<Plug>(prettier-format)')
 
--- 
+-- copilot
+map('i', '<c-j>', '<Plug>(copilot-next)')
+map('i', '<c-k>', '<Plug>(copilot-previous)')
+map('i', '<c-.>', '<Plug>(copilot-suggest)')
+map('i', '<C-/>', '<Plug>(copilot-dismiss)')
+
+--
 map('n', '<tab>', '<Plug>(matchup-%)')
 map('v', '<tab>', '<Plug>(matchup-%)')
 map('n', '[<tab>', '<Plug>(matchup-[%)')
@@ -48,7 +56,7 @@ map('n','J','mzJ`z')
 -- nmap <Leader>p :bp<cr>
 -- nmap <Leader>n :bn<cr>
 -- nmap <Leader>d :bd<cr>
-map('n','<leader>p','<cmd>:bp<CR>', { silent = true }) 
+map('n','<leader>p','<cmd>:bp<CR>', { silent = true })
 map('n','<leader>n','<cmd>:bn<CR>', { silent = true })
 map('n','<leader>d','<cmd>:bd<CR>', { silent = true })
 
@@ -84,7 +92,7 @@ map('n','<Down>','<cmd>:GitGutterNextHunk<CR>', { silent = true })
 
 
 
--- hop 
+-- hop
 local hop = require('hop')
 local directions = require('hop.hint').HintDirection
 vim.keymap.set('', 'f', ':HopWord<CR>', { silent = true }, { noremap = true })
@@ -122,5 +130,5 @@ map("n", "<leader>fo", "<cmd>:Other<CR>", { noremap = true, silent = true })
 map("n", "<leader>fc", "<cmd>:OtherClear<CR>", { noremap = true, silent = true })
 
 
-map('n','<leader>/','<cmd>:!htmlbeautifier %<CR>', { silent = true })
+-- map('n','<leader>/','<cmd>:!htmlbeautifier %<CR>', { silent = true })
 -- map('n','<c-r>','<cmd>:!ruby %<CR>', { silent = true })

@@ -31,7 +31,8 @@ use {
 -- or                            , branch = '0.1.x',
   requires = { {'nvim-lua/plenary.nvim'} }
 }
-use {'neoclide/coc.nvim', branch = 'release'}
+-- use {'neoclide/coc.nvim', branch = 'release'}
+
 use {'rgroli/other.nvim'}
 use {
   "nvim-neo-tree/neo-tree.nvim",
@@ -42,7 +43,7 @@ use {
       "MunifTanjim/nui.nvim",
     }
   }
-
+use {"windwp/nvim-ts-autotag"}
 use {'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons'}
 use {
   'nvim-lualine/lualine.nvim',
@@ -111,30 +112,21 @@ use {
     vim.g.matchup_matchparen_offscreen = { method = "popup" }
   end
 }
---
--- cmp
--- use 'neovim/nvim-lspconfig' -- Configurations for Nvim LSP
--- use "hrsh7th/nvim-cmp"
--- use "hrsh7th/cmp-nvim-lsp"
--- use "hrsh7th/cmp-buffer"
--- use "hrsh7th/cmp-path"
-
--- " For vsnip users.
--- use 'hrsh7th/cmp-vsnip'
--- use 'hrsh7th/vim-vsnip'
-
--- For luasnip users.
--- use 'L3MON4D3/LuaSnip'
--- use 'saadparwaiz1/cmp_luasnip'
-
---- For ultisnips users.
--- use 'SirVer/ultisnips'
--- use 'quangnguyen30192/cmp-nvim-ultisnips'
-
--- For snippy users.
--- use 'dcampos/nvim-snippy'
--- use 'dcampos/cmp-snippy'
--- use {'tzachar/cmp-tabnine', run='./install.sh', requires = 'hrsh7th/nvim-cmp'}
+use "williamboman/nvim-lsp-installer"
+use 'neovim/nvim-lspconfig' -- Configurations for Nvim LSP{}
+use 'tamago324/nlsp-settings.nvim'
+use "williamboman/mason.nvim"
+use "williamboman/mason-lspconfig.nvim"
+use 'hrsh7th/cmp-nvim-lsp'
+use 'jose-elias-alvarez/null-ls.nvim'
+use 'MunifTanjim/prettier.nvim'
+use 'hrsh7th/cmp-buffer'
+use 'hrsh7th/cmp-path'
+use 'hrsh7th/cmp-cmdline'
+use({"L3MON4D3/LuaSnip", tag = "v<CurrentMajor>.*"})
+use 'hrsh7th/nvim-cmp'
+use 'hrsh7th/cmp-vsnip'
+use 'hrsh7th/vim-vsnip'
 
 end)
 
