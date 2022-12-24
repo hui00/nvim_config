@@ -29,6 +29,21 @@ local kind_icons = {
   Operator = "",
   TypeParameter = "",
 }
+local tabnine = require('cmp_tabnine.config')
+
+tabnine:setup({
+	max_lines = 1000,
+	max_num_results = 20,
+	sort = true,
+	run_on_every_keystroke = true,
+	snippet_placeholder = '..',
+	ignored_file_types = {
+		-- default is not to ignore
+		-- uncomment to ignore in lua:
+		-- lua = true
+	},
+	show_prediction_strength = false
+})
   -- Set up nvim-cmp.
   local cmp = require'cmp'
 
@@ -44,11 +59,13 @@ local kind_icons = {
         luasnip = "[Snippet]",
         buffer = "[Buffer]",
         path = "[Path]",
+        cmp_tabnine = "[TN]",
       })[entry.source.name]
       return vim_item
     end,
   },
   sources = {
+    { name = 'cmp_tabnine' },
     { name = "nvim_lsp" },
     { name = "luasnip" },
     { name = "buffer" },

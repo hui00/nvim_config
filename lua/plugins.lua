@@ -126,6 +126,7 @@ use 'hrsh7th/cmp-path'
 use 'hrsh7th/cmp-cmdline'
 use({"L3MON4D3/LuaSnip", tag = "v<CurrentMajor>.*"})
 use 'hrsh7th/nvim-cmp'
+use {'tzachar/cmp-tabnine', run='./install.sh', requires = 'hrsh7th/nvim-cmp'}
 use 'hrsh7th/cmp-vsnip'
 use 'hrsh7th/vim-vsnip'
 
