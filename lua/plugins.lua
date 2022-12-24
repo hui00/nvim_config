@@ -114,7 +114,8 @@ use {
 }
 use "williamboman/nvim-lsp-installer"
 use 'neovim/nvim-lspconfig' -- Configurations for Nvim LSP{}
-use 'tamago324/nlsp-settings.nvim'
+-- use 'tamago324/nlsp-settings.nvim'
+use 'onsails/lspkind.nvim'
 use "williamboman/mason.nvim"
 use "williamboman/mason-lspconfig.nvim"
 use 'hrsh7th/cmp-nvim-lsp'

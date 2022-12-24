@@ -6,6 +6,14 @@ end
 -- map('i', '<c-,>', 'coc#refresh()')
 --
 -- map('n', '<Leader>/', '<Plug>(prettier-format)')
+--
+-- " formatting in normal mode
+-- nmap <Leader>f <Plug>(prettier-format)
+map('n', '<Leader>/', '<cmd>:Prettier<cr>')
+
+-- " range_formatting in visual mode
+-- xmap <Leader>f <Plug>(prettier-format)
+-- map('x', '<Leader>/', '<Plug>(prettier-format)')
 
 -- copilot
 map('i', '<c-j>', '<Plug>(copilot-next)')
