@@ -1,6 +1,12 @@
 vim.opt.completeopt = {"menu", "menuone", "noselect"}
 
+
 require("luasnip/loaders/from_vscode").lazy_load()
+-- require'luasnip'.filetype_extend("ruby", {"rails"})
+require'luasnip'.filetype_extend("eruby", {"rails"})
+require'luasnip'.filetype_extend("html", {"html"})
+require'luasnip'.filetype_extend("javascript", {"javascript"})
+
 
 local kind_icons = {
   Text = "",
@@ -65,6 +71,7 @@ tabnine:setup({
     end,
   },
   sources = {
+    { name = 'path' },
     { name = 'cmp_tabnine' },
     { name = "nvim_lsp" },
     { name = "luasnip" },
@@ -107,3 +114,24 @@ tabnine:setup({
       { name = 'buffer' },
     })
   })
+
+  cmp.setup.cmdline('/', {
+      mapping = cmp.mapping.preset.cmdline(),
+      sources = {
+        { name = 'buffer' }
+      }
+    })
+
+ cmp.setup.cmdline(':', {
+      mapping = cmp.mapping.preset.cmdline(),
+      sources = cmp.config.sources({
+        { name = 'path' }
+      }, {
+        {
+          name = 'cmdline',
+          option = {
+            ignore_cmds = { 'Man', '!' }
+          }
+        }
+      })
+    })
