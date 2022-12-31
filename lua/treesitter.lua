@@ -1,13 +1,16 @@
 require'nvim-treesitter.configs'.setup {
-  autopairs = { enable = true },
-  ensure_installed = 'maintained',
-  -- Install parsers synchronously (only applied to `ensure_installed`)
-  ensure_installed = "all",
+
+  matchup = {
+    enable = true,
+  },
+
   sync_install = false,
   auto_install = true,
+
+
   highlight = {
-    -- `false` will disable the whole extension
     enable = true,
+    
     -- Or use a function for more flexibility, e.g. to disable slow treesitter highlight for large files
     disable = function(lang, buf)
         local max_filesize = 100 * 1024 -- 100 KB
@@ -17,15 +20,14 @@ require'nvim-treesitter.configs'.setup {
         end
     end,
 
-  additional_vim_regex_highlighting = false,
-  },
-  indent = {
-    enable = true,
-  },
-  matchup = {
-    enable = true,
+    -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
+    -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
+    -- Using this option may slow down your editor, and you may see some duplicate highlights.
+    -- Instead of true it can also be a list of languages
+    -- additional_vim_regex_highlighting = true,
   },
 }
+require('hlargs').setup()
 require('nvim-ts-autotag').setup({
   filetypes = { "html" , "xml", "eruby" },
 })
