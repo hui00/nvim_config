@@ -5,15 +5,13 @@ end
 -- inoremap <silent><expr> <c-,> coc#refresh()
 -- map('i', '<c-,>', 'coc#refresh()')
 --
--- map('n', '<Leader>/', '<Plug>(prettier-format)')
---
--- " formatting in normal mode
--- nmap <Leader>f <Plug>(prettier-format)
-map('n', '<Leader>/', '<cmd>:Prettier<cr>')
 
--- " range_formatting in visual mode
--- xmap <Leader>f <Plug>(prettier-format)
--- map('x', '<Leader>/', '<Plug>(prettier-format)')
+if vim.bo.filetype == "eruby" then
+  map('n','<leader>/','<cmd>:!htmlbeautifier %<CR>')
+else map('n', '<Leader>/', '<cmd>:Prettier<cr>')
+end
+
+
 
 -- copilot
 map('i', '<c-j>', '<Plug>(copilot-next)')
@@ -64,21 +62,21 @@ map('n','J','mzJ`z')
 -- nmap <Leader>p :bp<cr>
 -- nmap <Leader>n :bn<cr>
 -- nmap <Leader>d :bd<cr>
-map('n','<leader>p','<cmd>:bp<CR>', { silent = true })
-map('n','<leader>n','<cmd>:bn<CR>', { silent = true })
-map('n','<leader>d','<cmd>:bd<CR>', { silent = true })
+map('n','<leader>p','<cmd>:bp<CR>')
+map('n','<leader>n','<cmd>:bn<CR>')
+map('n','<leader>d','<cmd>:bd<CR>')
 
 
 -- " Split windows
 -- nnoremap <leader>s <C-W>s
 -- nnoremap <leader>v <C-W>v
-map('n','<leader>s','<C-W>s', { silent = true })
-map('n','<leader>v','<C-W>v>', { silent = true })
+map('n','<leader>s','<C-W>s')
+map('n','<leader>v','<C-W>v>')
 
 
 
-map('n','<leader>f','<cmd>:NeoTreeFloatToggle<CR>', { silent = true })
-map('n','<c-f>','<cmd>:NeoTreeFocusToggle<CR>', { silent = true })
+map('n','<leader>f','<cmd>:NeoTreeFloatToggle<CR>')
+map('n','<c-f>','<cmd>:NeoTreeFocusToggle<CR>')
 
 -- Move to last change
 -- nnoremap ; `.zz
@@ -95,14 +93,13 @@ map('n','<c-h>','<c-w>h')
 map('n','<c-l>','<c-w>l')
 
 -- gitgutter
-map('n','<Up>','<cmd>:GitGutterPrevHunk<CR>', { silent = true })
-map('n','<Down>','<cmd>:GitGutterNextHunk<CR>', { silent = true })
+map('n','<Up>','<cmd>:GitGutterPrevHunk<CR>')
+map('n','<Down>','<cmd>:GitGutterNextHunk<CR>')
 
 
 
 -- hop
 local hop = require('hop')
-local directions = require('hop.hint').HintDirection
 vim.keymap.set('', 'f', ':HopWord<CR>', { silent = true }, { noremap = true })
 
 vim.keymap.set('', 'F', function()
@@ -134,9 +131,6 @@ require("other-nvim").setup({
 })
 
 -- for other-nvim rails
-map("n", "<leader>fo", "<cmd>:Other<CR>", { noremap = true, silent = true })
-map("n", "<leader>fc", "<cmd>:OtherClear<CR>", { noremap = true, silent = true })
+map("n", "<leader>fo", "<cmd>:Other<CR>")
+map("n", "<leader>fc", "<cmd>:OtherClear<CR>")
 
-
--- map('n','<leader>/','<cmd>:!htmlbeautifier %<CR>', { silent = true })
--- map('n','<c-r>','<cmd>:!ruby %<CR>', { silent = true })
