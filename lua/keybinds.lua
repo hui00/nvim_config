@@ -6,7 +6,7 @@ end
 -- map('i', '<c-,>', 'coc#refresh()')
 --
 
-if vim.bo.filetype == "eruby" then
+if vim.bo.filetype == "eruby" or "html.erb" then
   map('n','<leader>/','<cmd>:!htmlbeautifier %<CR>')
 else map('n', '<Leader>/', '<cmd>:Prettier<cr>')
 end

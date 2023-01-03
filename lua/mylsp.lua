@@ -17,6 +17,9 @@ vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
 local on_attach = function(client, bufnr)
+  if client.resolved_capabilities.document_formatting then
+    vim.cmd("au BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()")
+  end
   -- Enable completion triggered by <c-x><c-o>
   vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 
@@ -32,7 +35,7 @@ local on_attach = function(client, bufnr)
   vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, bufopts)
   vim.keymap.set('n', '<space>ca', vim.lsp.buf.code_action, bufopts)
   vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
-  -- vim.keymap.set('n', '<space>,', function() vim.lsp.buf.format { async = true } end, bufopts)
+  vim.keymap.set('n', '<space>//', function() vim.lsp.buf.format { async = true } end, bufopts)
 end
 
 
@@ -90,17 +93,18 @@ require("lspconfig").tailwindcss.setup {}
 local null_ls = require("null-ls")
 null_ls.setup({
   sources = {
-      -- null_ls.builtins.formatting.prettier.with({
-      --    filetypes = { "javascript", "typescript", "typescriptreact", "javascriptreact", "json", "css", "scss", "html", "yaml", "markdown", "ruby", "eruby", "erb" },
+      null_ls.builtins.formatting.prettier.with({
+         filetypes = { "javascript", "typescript", "typescriptreact", "javascriptreact", "json", "css", "scss", "html", "yaml", "markdown",},
       --     args = { "--stdin-filepath", vim.api.nvim_buf_get_name(0) },
       --     timeout = 80000,
-      -- }),
+      }),
       null_ls.builtins.diagnostics.erb_lint.with({
           filetypes = { "erb", "eruby" },
       }),
       null_ls.builtins.diagnostics.standardrb.with({
           filetypes = { "ruby" },
       }),
+      null_ls.builtins.formatting.standardrb
   },
 })
 
