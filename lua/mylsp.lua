@@ -4,6 +4,7 @@ require("mason").setup(
 require("mason-lspconfig").setup()
 require("luasnip.loaders.from_vscode").lazy_load()
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
+
 -- local lsp_installer = require('nvim-lsp-installer')
 
 -- Mappings.
@@ -17,11 +18,12 @@ vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
 local on_attach = function(client, bufnr)
-  if client.server_capabilities.document_formatting then
-    vim.cmd("au BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()")
-  end
+  -- if client.server_capabilities.document_formatting then
+  --   vim.cmd("au BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()")
+  -- end
   -- Enable completion triggered by <c-x><c-o>
   vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
+
 
   -- Mappings.
   -- See `:help vim.lsp.*` for documentation on any of the below functions
@@ -68,7 +70,7 @@ require("lspconfig").solargraph.setup{
     capabilities = capabilities,
     on_attach = on_attach,
     flags = lsp_flags,
-    filetypes = { "ruby",},
+    filetypes = { "ruby", "erb", "eruby" },
     init_options = {
       formatting = false,
     },
@@ -98,13 +100,22 @@ null_ls.setup({
       -- --     args = { "--stdin-filepath", vim.api.nvim_buf_get_name(0) },
       -- --     timeout = 80000,
       -- }),
-      null_ls.builtins.diagnostics.erb_lint.with({
-          filetypes = { "erb", "eruby" },
-      }),
       null_ls.builtins.diagnostics.standardrb.with({
           filetypes = { "ruby" },
       }),
-      null_ls.builtins.formatting.standardrb
+      null_ls.builtins.formatting.standardrb.with({
+          filetypes = { "ruby" },
+      }),
+      null_ls.builtins.diagnostics.erb_lint.with({
+          filetypes = { "erb", "eruby" },
+      }),
+      null_ls.builtins.formatting.erb_lint.with({
+          filetypes = { "erb", "eruby" },
+      }),
+      null_ls.builtins.diagnostics.rubocop.with({
+          filetypes = { "erb", "eruby", "ruby" },
+          useBundler = true,
+      }),
   },
 })
 
