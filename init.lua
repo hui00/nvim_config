@@ -29,4 +29,8 @@ require("bufferline").setup{
     -- diagnostics = "nvim_lsp"
   }
 }
-
+require'marks'.setup {
+        default_mappings = true,
+        signs = true,
+        mappings = {}
+      }

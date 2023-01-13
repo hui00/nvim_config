@@ -11,6 +11,8 @@ if vim.bo.filetype == "eruby" or "html.erb" then
 else map('n', '<Leader>/', '<cmd>:Prettier<cr>')
 end
 
+-- ChatGTP map to leader c
+map('n', '<leader>c', '<cmd>:ChatGPT<cr>')
 
 
 -- copilot

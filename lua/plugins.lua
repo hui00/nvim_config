@@ -3,7 +3,6 @@ return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
   use { "catppuccin/nvim", as = "catppuccin" }
   use 'folke/tokyonight.nvim'
-
   use "lukas-reineke/indent-blankline.nvim"
 
   -- improve :LuaCacheLoga lodading
@@ -79,6 +78,7 @@ return require('packer').startup(function(use)
   }
   use 'nvim-treesitter/nvim-treesitter-textobjects'
   use { "tpope/vim-rails" }
+  use {"tpope/vim-bundler"}
   use { 'ibhagwan/smartyank.nvim' }
 
   -- \\ to open toggle or <leader>gg for lazygit
@@ -118,4 +118,18 @@ return require('packer').startup(function(use)
   use { 'tzachar/cmp-tabnine', run = './install.sh', requires = 'hrsh7th/nvim-cmp' }
   use "rafamadriz/friendly-snippets"
 
+  use({
+  "jackMort/ChatGPT.nvim",
+    config = function()
+      require("chatgpt").setup({
+        -- optional configuration
+      })
+    end,
+    requires = {
+      "MunifTanjim/nui.nvim",
+      "nvim-lua/plenary.nvim",
+      "nvim-telescope/telescope.nvim"
+    }
+})
+use 'chentoast/marks.nvim'
 end)
