@@ -91,7 +91,6 @@ require("lspconfig").html.setup {
 require("lspconfig").tailwindcss.setup {}
 
 
-
 local null_ls = require("null-ls")
 null_ls.setup({
   sources = {
@@ -105,6 +104,8 @@ null_ls.setup({
       }),
       null_ls.builtins.formatting.standardrb.with({
           filetypes = { "ruby" },
+      }),
+      null_ls.builtins.formatting.lua_format.with({
       }),
       null_ls.builtins.diagnostics.erb_lint.with({
           filetypes = { "erb", "eruby" },
