@@ -13,6 +13,8 @@ require("lazy").setup({
  -- give the | 
   "lukas-reineke/indent-blankline.nvim",
 
+ {"ethanholz/nvim-lastplace", config = true },
+
 
   -- improve :LuaCacheLoga lodading
   'lewis6991/impatient.nvim',
@@ -40,7 +42,10 @@ require("lazy").setup({
   {
     'nvim-telescope/telescope.nvim', tag = '0.1.0',
     -- or                            , branch = '0.1.x',
-    dependencies = { { 'nvim-lua/plenary.nvim' } }
+    dependencies = { 'nvim-lua/plenary.nvim', 'nvim-telescope/telescope-live-grep-args.nvim'},
+     config = function()
+    require("telescope").load_extension("live_grep_args")
+    end,
   },
   { "smartpde/telescope-recent-files" },
   -- use {'neoclide/coc.nvim', branch = 'release'}
