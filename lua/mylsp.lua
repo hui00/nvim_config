@@ -1,5 +1,4 @@
-require("mason").setup(
-)
+require("mason").setup()
 
 require("mason-lspconfig").setup()
 require("luasnip.loaders.from_vscode").lazy_load()
@@ -48,6 +47,21 @@ local lsp_flags = {
 }
 
 
+require("lspconfig").tailwindcss.setup{
+  settings = {
+    tailwindCSS = {
+          experimental = {
+            classRegex = {  -- for haml :D
+              "class: ['\"](.+?)['\"]" --// class: "..." // ruby .html.erb
+              -- "%\\w+([^\\s]*)",
+              -- "\\.([^\\.]*)",
+              -- ":class\\s*=>\\s*\"([^\"]*)",
+              -- "class:\\s+\"([^\"]*)"
+            }
+          }
+        }
+  }
+}
 
 require("lspconfig").emmet_ls.setup{
     capabilities = capabilities,
@@ -88,7 +102,12 @@ require("lspconfig").html.setup {
   filetypes = { "html"},
 }
 
-require("lspconfig").tailwindcss.setup {}
+
+require('lspconfig').tsserver.setup {
+   capabilities = capabilities,
+}
+
+
 
 
 local null_ls = require("null-ls")
