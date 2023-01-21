@@ -38,7 +38,7 @@ require('impatient')
 
 
 require("telescope").load_extension("recent_files")
-vim.api.nvim_set_keymap("n", "<Leader><Leader>",
+vim.api.nvim_set_keymap("n", "<Leader>fr",
   [[<cmd>lua require('telescope').extensions.recent_files.pick()<CR>]],
   {noremap = true, silent = true})
 
@@ -53,4 +53,9 @@ require'marks'.setup {
         signs = true,
         mappings = {}
 }
+
+vim.keymap.set("n", "<space><space>", function()
+        vim.cmd("CtrlSpace")
+    end, { noremap = true, silent = true, desc = "CtrlSpace" })
+
 

@@ -146,4 +146,6 @@ require("lazy").setup({
     }
 },
 'chentoast/marks.nvim',
+'vim-ctrlspace/vim-ctrlspace',
+'famiu/bufdelete.nvim',
 })

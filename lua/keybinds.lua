@@ -66,13 +66,13 @@ map('n','J','mzJ`z')
 -- nmap <Leader>d :bd<cr>
 map('n','<leader>p','<cmd>:bp<CR>')
 map('n','<leader>n','<cmd>:bn<CR>')
-map('n','<leader>d','<cmd>:bd<CR>')
+map('n','<leader>d','<cmd>:Bdelete<CR>')
 
 
 -- " Split windows
 -- nnoremap <leader>s <C-W>s
 -- nnoremap <leader>v <C-W>v
-map('n','<leader>s','<C-W>s')
+map('n','<leader>x','<C-W>s')
 map('n','<leader>v','<C-W>v>')
 
 
