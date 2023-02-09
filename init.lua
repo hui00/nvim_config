@@ -54,8 +54,8 @@ require'marks'.setup {
         mappings = {}
 }
 
-vim.keymap.set("n", "<space><space>", function()
-        vim.cmd("CtrlSpace")
-    end, { noremap = true, silent = true, desc = "CtrlSpace" })
+-- vim.keymap.set("n", "<space><space>", function()
+--         vim.cmd("CtrlSpace")
+--     end, { noremap = true, silent = true, desc = "CtrlSpace" })
 
 
