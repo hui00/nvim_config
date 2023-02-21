@@ -129,9 +129,8 @@ require("lazy").setup({
   'hrsh7th/cmp-cmdline',
   'saadparwaiz1/cmp_luasnip',
   'hrsh7th/nvim-cmp',
-  { 'tzachar/cmp-tabnine', build = './install.sh', dependencies = 'hrsh7th/nvim-cmp' },
   "rafamadriz/friendly-snippets",
-
+  "tzachar/cmp-tabnine",
   {
   "jackMort/ChatGPT.nvim",
     config = function()
